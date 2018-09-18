@@ -1,0 +1,621 @@
+
+@font-face {
+    font-family: "Montserrat-Thin";
+    src: url(assets/fonts/Montserrat-Thin.ttf) format('truetype');
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Montserrat-ExtraLight";
+    src: url(assets/fonts/Montserrat-ExtraLight.ttf) format('truetype');
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "Montserrat-Light";
+    src: url(assets/fonts/Montserrat-Light.ttf) format('truetype');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Montserrat-Regular";
+    src: url(assets/fonts/Montserrat-Regular.ttf) format('truetype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url(assets/fonts/Montserrat-SemiBold.ttf) format('truetype');
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "Montserrat-Bold";
+    src: url(assets/fonts/Montserrat-Bold.ttf) format('truetype');
+    font-weight: 700;
+  }
+
+  .width-tester {
+    display: none;
+  }
+   
+  body {
+    background-color: #FAFAFA;
+    font-family: "Montserrat-Light";
+    color: #BFBFBF;
+    font-size: 16px;
+    position: relative;
+    background-repeat: no-repeat;
+  }
+
+  b {
+    font-family: "montserrat-Bold";
+  }
+  
+  #header {
+    background-color: #24B1FF;
+    padding: 65px 50px 24px;
+  }
+
+  .logo {
+      margin-bottom: 20px;
+      max-width: 60px;
+  }
+
+  #header h1 {
+      font-size: 42px;
+      color: #FAFAFA;
+      font-family: "Montserrat-Bold";
+      line-height: 41px;
+      letter-spacing: 1.3px;
+  }
+  
+  #body-wrap {
+    background-color: #fafafa;  
+  }
+
+  #body-wrap .section {
+    padding: 13px 50px 19px;
+    background-color: #ffffff;
+    border-bottom: 2px dotted #D8D8D8;
+    position: relative;
+  }
+
+  #body-wrap .section:last-child {
+    border-bottom: none;
+  }
+
+  #body-wrap .intro-section {
+    padding: 42px 50px 25px;
+    background-color: #fafafa;
+    border-bottom: none;
+    font-size: 20px;
+    font-family: "Montserrat-ExtraLight";
+    line-height: 26px;
+    color: #666666;
+  }
+
+  #body-wrap .section a {
+    color: #24B1FF;
+    font-size: 16px;
+    font-family: "Montserrat-Bold";
+    line-height: 36px;
+    border-bottom: 2px dotted #24B1FF;
+  }
+
+  #body-wrap .section a:hover {
+    text-decoration: none;
+    color: #24B1FF;
+  }
+
+  #body-wrap #season-select {
+    padding: 48px 50px 35px
+  }
+
+  #body-wrap #season-select .dropdown {
+    margin-right: 27px;
+  }
+
+  #body-wrap #season-select button#season-btn {
+    background-color: #fefefe;
+    color: #333333;
+    font-size: 28px;
+    font-family: "Montserrat-Light";
+    border: none;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    padding: 18px 27px;
+  }
+
+  #body-wrap #season-select .dropdown-toggle::after {
+    margin-left: 60px;
+    display: none;
+  }
+
+  #body-wrap #season-select .dropdown-toggle .fa {
+    margin-left: 0;
+    padding-left: 46px;
+  }
+
+  #body-wrap #season-select .dropdown-menu {
+    width: 241px;
+    padding: 0;
+  }
+
+  #body-wrap #season-select .dropdown-menu .dropdown-item {
+    background-color: #fefefe;
+    color: #BFBFBF;
+    font-family: "Montserrat-Thin";
+    font-size: 20px;
+    border: none;
+    padding: 7px 1.5rem;
+  }
+
+  #body-wrap #season-select .dropdown-menu .dropdown-item:first-child {
+    padding-top: 15px;
+  }
+
+  #body-wrap #season-select .dropdown-menu .dropdown-item:last-child {
+    padding-bottom: 15px;
+  }
+
+  #body-wrap #season-select .dropdown-menu .dropdown-item:hover {
+    cursor: pointer;
+    background-color: #fafafa;
+  }
+
+  #body-wrap .in-progress,
+  #body-wrap .doing {
+    font-size: 16px;
+    font-family: "Montserrat-Bold";
+    background-color: #EFD96F;
+    color: #FAFAFA !important;
+    padding: 4px 12px;
+    border: none;
+    margin-bottom: 11px;
+    /* display: inline-block; */
+  }
+
+  #body-wrap #season-select .in-progress {
+    display: inline-block !important;
+  }
+
+  #body-wrap .section.ep-section p.doing {
+    font-family: "Montserrat-Bold";
+    font-size: 12px;
+    padding: 4px 12px;
+    margin-top: 7px;
+  }
+
+  #body-wrap .ep-section {
+    font-family: "Montserrat-Light";
+  }
+
+  .collapse-toggle {
+    position: absolute;
+    top: 5px;
+    left: 11px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    padding: 15px;
+    z-index: 100;
+  }
+
+  .collapse-toggle i {
+    font-size: 24px;
+    color: #666666;
+  }
+
+  .rotate {
+    transform: rotate(90deg); 
+    transition: transform 0.5s;
+  }
+
+  #body-wrap .section.ep-section p {
+    color: #333333;
+    transition: color 0.5s;
+  }
+
+  #body-wrap .section.ep-section p.light {
+    color: #BFBFBF;
+    transition: color 0.5s;
+  }
+
+  #body-wrap .section.ep-section .ep-desc > p:first-child {
+    margin-top: 14px;
+  }
+
+  #body-wrap .section.ep-section .ep-top {
+    margin-top: 0;
+  }
+
+  #body-wrap .section.ep-section .ep-top p {
+    margin-bottom: 0;
+  }
+
+  #body-wrap .section.ep-section .ep-top p:first-child, #body-wrap .section.ep-section .ep-top p:nth-child(2) {
+    display: inline-block;
+  }
+
+  #body-wrap .section.ep-section .ep-top p:nth-child(2) {
+    float: right;
+  }
+
+  #body-wrap .section.ep-section .ep-top p:last-child {
+    display: none;
+  }
+
+  #body-wrap .section .ep-number {
+    font-size: 28px;
+    margin-right: 30px;
+    color: #BFBFBF;
+  }
+
+  #body-wrap .section .ep-title {
+    font-family: "Montserrat-Bold";
+    font-size: 28px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    color: #BFBFBF;
+  }
+
+  #body-wrap .section p[aria-expanded="true"] .ep-number,
+  #body-wrap .section p[aria-expanded="true"] .ep-title {
+    color: #333333;
+  }
+
+  #body-wrap .section.ep-section p.ep-status-done,
+  #body-wrap .section.ep-section p.ep-status-todo {
+    font-family: "Montserrat-Bold";
+    font-size: 12px;
+    color: #65D890 !important;
+    border: 2px solid #65D890;
+    padding: 2px 8px;
+    margin-top: 7px;
+    display: inline-block;
+  }
+
+  #body-wrap .section.ep-section p.ep-status-todo {
+    color: #BFBFBF !important;
+    border: 2px solid #BFBFBF;
+  }
+
+  /* #body-wrap .section .ep-top .ep-checkmark {
+    position: absolute;
+    left: 340px;
+    bottom: 8px;
+    color: #65D890;
+  } */
+
+  /* #body-wrap .section .ep-top[aria-expanded="true"] .ep-checkmark {
+    display: none;
+  } */
+
+  #body-wrap .section .ep-icon img {
+    max-width: 100%;
+    display: block;
+    margin: 34px auto 37px;
+  }
+
+  #body-wrap .section.ep-in-progress .ep-icon img,
+  #body-wrap .section.ep-todo .ep-icon img {
+    opacity: 0.5;
+  }
+
+  .section.ep-section.ep-in-progress .ep-video,
+  .section.ep-section.ep-todo .ep-video {
+    display: none;
+  }
+
+  #body-wrap .section .gray-box {
+    background-color: #fafafa;
+    padding: 37px 50px;
+    margin-bottom: 13px;
+    width: calc(100% + 100px);
+    margin-left: -50px;
+  }
+
+  #body-wrap .section .gray-box p:first-child {
+    margin-bottom: 4px;
+  }
+
+  #body-wrap .section .gray-box .small {
+    color: #BFBFBF;
+  }
+
+  #body-wrap .ep-section .ep-close span:hover {
+    cursor: pointer;
+  }
+
+  #body-wrap .section .gray-box button {
+    border: none;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    background-color: transparent;
+    padding: 22px 31px;
+  }
+
+  #body-wrap .section .readmore {
+    margin-top: -11px;
+  }
+
+  #body-wrap .section .gh-link a {
+    border-bottom: none;
+}
+
+  #body-wrap .section .gh-link:hover {
+    cursor: pointer;
+  }
+
+  #body-wrap .section .gh-link a span,
+  #body-wrap .ep-section .ep-close {
+    margin-top: 22px;
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+    color: #666666;
+  }
+
+  #body-wrap .section .gh-link.ep-close {
+    margin-right: -25px;
+    margin-bottom: 0;
+  }
+
+  #body-wrap .section .gh-link a > span,
+  #body-wrap .ep-section .ep-close span {
+    border-bottom: 2px dotted #666666;
+  }
+
+  #body-wrap .section .gh-link img {
+    margin-right: 6px;
+  }
+
+  #body-wrap .section .video {
+    margin-bottom: 10px;
+    max-width: 500px;
+  }
+  
+  footer {
+    background-color: #333333;
+    padding: 33px 0 180px;
+  }
+
+  footer p {
+    font-family: "Montserrat-ExtraLight";
+  }
+
+  footer .section {
+    border-bottom: 2px dotted #666666;
+    padding: 13px 50px 13px;
+    color: #666666;
+  }
+
+  footer .section.no-bottom {
+    border-bottom: 0;
+  }
+
+  footer .section.footer-section-buttons {
+    padding-top: 34px;
+  }
+
+  footer .section h2 {
+    font-size: 20px;
+    color: #BFBFBF;
+    font-family: "Montserrat-ExtraLight";
+    line-height: 140%;
+    padding-bottom: 31px;
+    letter-spacing: 0.5px;
+  }
+
+  footer .section p {
+    margin-bottom: 5px;
+  }
+
+  footer .section p a {
+    color: #24B1FF;
+    font-size: 16px;
+    font-family: "Montserrat-Bold";
+    line-height: 36px;
+    border-bottom: 2px dotted #24B1FF;
+  }
+
+  footer .section a:hover {
+    text-decoration: none;
+}
+  
+  footer .btn-dark {
+    background-color: rgba(250, 250, 250, 0.1); 
+    color: #FAFAFA; 
+    border: none;
+    font-family: "Montserrat-Bold";
+    font-size: 16px;
+    padding: 32px 24px 30px;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    min-width: 274px;
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.25);
+  }
+  
+  footer .btn-dark img {
+    max-width: 80%;
+    height: auto;
+    margin-right: 14px;
+  }
+  
+  /*Small devices (landscape phones, 576px and up)*/
+  @media (min-width: 576px) {
+    .section {
+      padding: 18px 10vw 29px;
+    }
+  }
+  
+  /*Medium devices (tablets, 768px and up)*/
+  @media (min-width: 768px) {
+    /* .width-tester {
+      width: 768px;
+    } */
+    .collapse-toggle {
+      display: none;
+    }
+    .ep-desc,
+    .ep-icon,
+    .ep-section.done .ep-video {
+      display: block !important;
+    }
+    .ep-close {
+      display: none;
+    }
+
+    #header h1 {
+      font-family: "Montserrat-Bold";
+      font-size: 88px;
+      line-height: 82px;
+    }
+    .logo {
+      max-width: 80px;
+    }
+    #header {
+      padding: 100px 10vw 77px;
+    }
+    #body-wrap .intro-section {
+      padding: 42px 10vw 43px;
+      font-family: "Montserrat-Light";
+      font-size: 24px;
+      line-height: 32px;
+    }
+    #body-wrap #season-select,
+    #body-wrap .section {
+      padding: 50px 10vw 62px;
+    }
+    #body-wrap #season-select button#season-btn {
+      font-family: "Montserrat-ExtraLight";
+      margin-bottom: 25px;
+    }
+    #body-wrap #season-select .season-status .in-progress, 
+    #body-wrap .ep-section .in-progress {
+      font-family: "Montserrat-SemiBold";
+    }
+    #body-wrap #season-select.section p {
+      font-family: "Montserrat-ExtraLight";
+      font-size: 18px;
+      line-height: 28px;
+    }
+    #body-wrap .section.ep-section .ep-top {
+      cursor: text;
+    }
+    #body-wrap .section.ep-section .ep-top p:first-child,
+    #body-wrap .section.ep-section .ep-top p:nth-child(2) {
+      display: inline-block;
+    }
+    #body-wrap .section .readmore,
+    #body-wrap .section .gh-link:not(.ep-close) {
+      display: inline-block;
+    }
+    #body-wrap .section .readmore {
+      margin-right: 21px;
+    }
+    #body-wrap .section.ep-section p.ep-status-done,
+    #body-wrap .section.ep-section p.ep-status-todo {
+      margin-top: -5px;
+      padding: 5px 8px 3px;
+    }
+    #body-wrap .section.ep-section p.doing {
+      margin-top: -5px;
+    }
+    #body-wrap .section.ep-section p.ep-status {
+      font-size: 16px;
+    }
+    #body-wrap .section .ep-title {
+      font-family: "Montserrat-SemiBold";
+      margin-top: 5px;
+    }
+    #body-wrap .ep-section p {
+      font-family: "Montserrat-Thin";
+      font-size: 20px;
+      line-height: 26px;
+    }
+    #body-wrap .section a {
+      font-family: "Montserrat-SemiBold";
+    }
+    #body-wrap .section .gray-box {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 40px;
+    }
+    #body-wrap .section .gray-box p {
+      font-family: "Montserrat-ExtraLight";
+      font-size: 16px;
+    }
+    .gray-box p bold {
+      font-family: "Montserrat-SemiBold";
+    }
+    #body-wrap .section .gray-box button a {
+      font-size: 18px;
+    }
+    footer .section p a {
+      font-family: "Montserrat-SemiBold";
+    }
+
+    /* THE FOLLOWING RULES NEED TO BE AT THIS BREAKPOINT */
+    #body-wrap #season-select .dropdown,
+    #body-wrap #season-select .season-status {
+      display: inline-block;
+    }
+    #body-wrap #season-select .season-status span {
+      margin-top: -15px;
+      vertical-align: top;
+    }
+  }
+  
+  /*Large devices (desktops, 992px and up)*/
+  @media (min-width: 992px) {
+    #body-wrap .section.ep-section .ep-top p:last-child {
+      display: inline-block;
+      margin-top: -5px;
+    }
+    #body-wrap .section.ep-section .ep-top p:nth-child(2)  {
+      display: none !important;
+    }
+    .ep-top {
+      display: -webkit-flex;
+      -webkit-align-items: center;
+      display: flex;
+      align-items: flex-start;
+    }
+    #body-wrap .section .ep-title {
+      margin-top: 0;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    
+  }
+
+  @media (min-width: 1350px) {
+    #header {
+      padding-bottom: 57px;
+    }
+    .logo {
+      padding: 2px 0 53px 0;
+    }
+    #header h1 {
+      font-size: 102px;
+      line-height: 95px;
+    }
+    #body-wrap .intro-section {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    footer h2 {
+      font-size: 28px;
+    }
+    footer {
+      padding: 73px 0 221px;
+    }
+
+
+
+  }
