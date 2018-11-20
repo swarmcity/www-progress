@@ -29,10 +29,6 @@
     src: url(assets/fonts/Montserrat-Bold.ttf) format('truetype');
     font-weight: 700;
   }
-
-  .width-tester {
-    display: none;
-  }
    
   body {
     background-color: #FAFAFA;
@@ -508,9 +504,6 @@
   
   /*Medium devices (tablets, 768px and up)*/
   @media (min-width: 768px) {
-    /* .width-tester {
-      width: 768px;
-    } */
     .navbar {
       padding-bottom: 33px;
     }

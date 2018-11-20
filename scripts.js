@@ -32,31 +32,33 @@ function changeLink(){
 }
 
 // ===================================================
-// ROTATE COLLAPSE ARROW
+// ROTATE COLLAPSE ARROW,
+// CHANGE TITLE COLOR
+// SCROLL ON CLOSE
 // ===================================================
 
 function rotateArrow(){
-  $('.collapse-toggle, .ep-close').click(function () {
+  var rotateToggle = $('.collapse-toggle');
+  $(rotateToggle).click(function () {
+    $('.section .ep-top p').addClass('light');
+    var thisSection = $(this).closest('[id]').prop('id');
+    $('#' + thisSection + ' .ep-top p').removeClass('light');
+    if($('#' + thisSection + ' .collapse-toggle').hasClass('rotate')){
+      $('.section .ep-top p').removeClass('light');
+      var $card = $(this).closest('.card');
+      $('html,body').animate({
+        scrollTop: $card.offset().top
+      }, 500);
+    }
+    var thisSection = $(this).closest('[id]').prop('id');
+    $('#' + thisSection + ' .collapse-toggle').toggleClass('rotate');
+    $(rotateToggle).not(this).removeClass('rotate');
+  });
+  $('.ep-close').click(function () {
     var thisSection = $(this).closest('[id]').prop('id');
     $('#' + thisSection + ' .collapse-toggle').toggleClass('rotate');
     $('.collapse-toggle').not(this).removeClass('rotate');
-  });
-}
-
-// ===================================================
-// CHANGE TITLE COLOR AND SCROLL ON CLOSE
-// ===================================================
-
-function changeColor(){
-  // CHANGE COLOR
-  // $('.collapse-toggle').click(function () {
-  //   $('.section .ep-top p').addClass('light');
-  //   var thisSection = $(this).closest('[id]').prop('id');
-  //   $('#' + thisSection + ' .ep-top p').removeClass('light');
-  // });  
-  // SCROLL ON CLOSE
-  $('.ep-close, .collapse-toggle.rotate').click(function () {
-    // $('.section .ep-top p').removeClass('light');
+    $('.section .ep-top p').removeClass('light');
     var $card = $(this).closest('.card');
     $('html,body').animate({
       scrollTop: $card.offset().top
@@ -70,9 +72,7 @@ function changeColor(){
 
 $(document).ready(function(){    
   changeLink();
-  // epCollapse();  
   rotateArrow();
-  changeColor();
 
   $('.ep-icon.collapse').on('shown.bs.collapse.ep-icon', function(e) {
     var $card = $(this).closest('.card');
