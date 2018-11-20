@@ -49,14 +49,14 @@ function rotateArrow(){
 
 function changeColor(){
   // CHANGE COLOR
-  $('.collapse-toggle').click(function () {
-    $('.section .ep-top p').addClass('light');
-    var thisSection = $(this).closest('[id]').prop('id');
-    $('#' + thisSection + ' .ep-top p').removeClass('light');
-  });
+  // $('.collapse-toggle').click(function () {
+  //   $('.section .ep-top p').addClass('light');
+  //   var thisSection = $(this).closest('[id]').prop('id');
+  //   $('#' + thisSection + ' .ep-top p').removeClass('light');
+  // });  
   // SCROLL ON CLOSE
-  $('.ep-close').click(function () {
-    $('.section .ep-top p').removeClass('light');
+  $('.ep-close, .collapse-toggle.rotate').click(function () {
+    // $('.section .ep-top p').removeClass('light');
     var $card = $(this).closest('.card');
     $('html,body').animate({
       scrollTop: $card.offset().top
